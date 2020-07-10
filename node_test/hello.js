@@ -203,3 +203,119 @@ let cook2 = {
     }
 }
 console.log(cook2.name+","+cook2.age+","+cook2.make() )
+
+// 자바스크립트 객체 처리는 제이슨오브젝트
+// 키 : 벨루
+let football = {
+    color : 'blue', 
+    size : 36, 
+    isAcitve: true,
+    add : function(x,y){
+     ret = x+y
+        return ret
+    }
+}
+res = football.add(5,4)
+console.log(res)
+
+//단일 데이터
+let name = 'James'
+
+
+// Array(배열) : 데이터를 여러개를 저장하기 위해 사용
+
+let names = ['James','Josn','Michael']
+// 어레이에 저장되어 있는 값을 가져오는 코드
+names[0]           //index 인덱스는 0부터 시작
+names[1]
+names[2]
+
+names = ['James','Josn','Michael']
+let employee = [
+    {name:'James',age:24},
+    {name:'Josn',age:25},
+    {name:'Michael',age:30}
+]
+// 함수.뭐뭐는 키값을 가져오라는 뜻
+employee[0].name
+employee[0].age
+employee[1].name
+employee[1].age
+employee[2].name
+employee[2].age
+
+console.log(employee[1].name)
+
+let peple = [
+    {name:'Mike',age:24,
+    pet:[{name:"뽀삐",type:'cat'},{name:"나비",type:'dog'}]},
+    {name:'John',age:30,
+    pet:[{name:"냐옹이",type:'cat'},{name:"바둑이",type:'dog'}]},
+    {name:'Harry',age:29,pet:['없음']}
+]
+console.log(peple[0])
+// 1 첫번째 사람의 두번째 펫 이름출력
+console.log(peple[0].pet[1].name)
+// 2 두번째 사람의 첫번쨰 펫은 어떤 동물인가을 출력
+console.log(peple[1].pet[0].type)
+
+names = ['James','Josn','Michael']
+
+// 두번째 이름을 Mike 로 변경.
+names [1] = 'Mike'
+console.log(names[1])
+
+// Chris 를 names에 추가
+
+names.push('Chris')
+console.log(names)
+
+// unshift()
+
+let arr1 = [1,2,3]
+arr1.unshift(100)
+console.log(arr1)
+
+//spilce : 내가 원하는 위치에서 데이터를 추출하는 용도 (지울수도있음)
+// (인덱스 위치,인덱스 위치부터 가져 올 갯수) 
+let arr2 = ['one','two','three','four'] // 여기에 남아있는거만 표시가능 여기는 2,3이 남음
+let ret_arr2 = arr2.splice(0,1) // 여기서 가져가면 예) [1,2,3]에서 1을 가져오면
+console.log(arr2)
+console.log(ret_arr2)
+
+// 데이터 삭제 pop은 맨뒤의 데이터 삭제
+names.pop()
+console.log(names)
+
+// 어레이의 모든 원소를 하나로 합친다
+let ret_names = names.join('-')
+console.log(ret_names)
+
+//filter
+let ret_filter = names.filter(name => name.length > 4)
+//  어레이.필터(자기가 쓴 변수이름 => 변수.렌스 > 크기)
+// 필터 함수는 어레이에서 가져온 데이터를 자기가 변수이름을 정해서
+// 설정한 크기만큼 가져와서 제이슨 어레이를 만든다
+console.log(ret_filter)
+
+names = ['James','Josn','Michael']
+
+let num_arr = [2,5,8,10]
+// 어레이의 저장된 모든 데이터를 출력
+for(let i = 0; i < names.length; i++){
+    console.log(names[i])
+}
+// 어레이에 내장된 반복(loop) 메소드.
+names.forEach(function(name){  // 안에 있는 데이터를 name으로 받오겠다
+    console.log(name)
+})
+
+// 각 데이터를 제곱해서 출력
+for(let i = 0; i <num_arr.length;i++){
+    let up = num_arr[i]**2
+    console.log(up)
+}
+num_arr.forEach(function(num){
+    let upp = num **2
+    console.log(upp)
+})
