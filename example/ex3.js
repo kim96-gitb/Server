@@ -29,10 +29,10 @@ let connection = mysql.createConnection(
 // })
 
 // 4 페이지 수 만큼 나오게 하는거 보류
-connection.query('select title , char_length(title) as charcount from books;',
-function(error,res){
-    console.log(res)
-})
+// connection.query('select title , char_length(title) as charcount from books;',
+// function(error,res){
+//     console.log(res)
+// })
 
 //5
 // let insert_query = 'insert into books (title,author_fname,author_lname,released_year,stock_quantity,pages)\
@@ -72,5 +72,6 @@ function(error,res){
 //10
 connection.query('select released_year , count(title) , avg(round(pages,3)) as avgcount from books group by released_year;',
 function(error,res){
-    console.log(res)
+    for(let i =0; i <res.length;i++) // 루프을 돌면 보기 편함
+    console.log(res[i].released_year)
 })

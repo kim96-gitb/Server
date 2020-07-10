@@ -26,7 +26,8 @@ let connection = mysql.createConnection(
 // 세번째 
 // connection.query('select * from shirts where shirt_size = "M";',
 //                         function(error,result){
-//                             console.log(result)
+//                             for(let i = 0; i < result.length;i++)                        
+//                             console.log(result[i].color)
 //                         })
 
 // 네번째
