@@ -28,7 +28,7 @@ let connection = mysql.createConnection(
 //     console.log(res)
 // })
 
-// 4 페이지 수 만큼 나오게 하는거 보류
+// 4
 // connection.query('select title , char_length(title) as charcount from books;',
 // function(error,res){
 //     console.log(res)
