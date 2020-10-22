@@ -1,15 +1,11 @@
-let  mysql = require('mysql')
+let mysql = require("mysql");
 
-let connection = mysql.createConnection(
-    {
-        host:'database-1.c3sxfyepvlug.ap-northeast-2.rds.amazonaws.com',
-        user : 'node_user',
-        database : 'my_test',
-        password : 'wlsghks9'
-
-
-}
-);
+let connection = mysql.createConnection({
+  host: "database-1.c3sxfyepvlug.ap-northeast-2.rds.amazonaws.com",
+  user: "node_user",
+  database: "my_test",
+  password: "wlsghks9",
+});
 // 1
 // connection.query('select concat(author_fname,author_lname) from books;'
 // ,function(error,res,field){
@@ -43,7 +39,7 @@ let connection = mysql.createConnection(
 // connection.query(insert_query,function(error,res){
 //     console.log(res)
 // })
- 
+
 //6
 // connection.query('select title , released_year from books order by released_year desc limit 5;',
 // function(error,res){
@@ -68,10 +64,15 @@ let connection = mysql.createConnection(
 //     console.log(res)
 // })
 
-
-//10
-connection.query('select released_year , count(title) , avg(round(pages,3)) as avgcount from books group by released_year;',
-function(error,res){
-    for(let i =0; i <res.length;i++) // 루프을 돌면 보기 편함
-    console.log(res[i].released_year)
-})
+//10 dd
+connection.query(
+  "select released_year , count(title) , avg(round(pages,3)) as avgcount from books group by released_year;",
+  function (error, res) {
+    for (
+      let i = 0;
+      i < res.length;
+      i++ // 루프을 돌면 보기 편함
+    )
+      console.log(res[i].released_year);
+  }
+);
